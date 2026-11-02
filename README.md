@@ -1,18 +1,19 @@
 # Momoi
 
-Public source snapshot. Self-hosting instructions are still being refined.
+A voting app for a Twitch VOD community. Viewers choose what they want to watch
+next, and the winning playlist plays automatically.
 
-Community voting and playlist playback coordination for a 24/7 Twitch VOD stream.
-Built and maintained independently to let viewers help choose what plays next,
-while giving the stream operator one place to manage playlists and voting.
+I built it to give the community a say instead of leaving playback random. It
+also gives the stream operator one place to manage playlists and voting.
 
-**[Browse the live app](https://momoi.joe2xyb.workers.dev/)** ·
-**[View public rankings](https://momoi.joe2xyb.workers.dev/results)** ·
-**[Read the architecture](docs/architecture.md)**
+**[Live app](https://momoi.joe2xyb.workers.dev/)** ·
+**[Public rankings](https://momoi.joe2xyb.workers.dev/results)** ·
+**[Architecture](docs/architecture.md)**
 
-Browsing and aggregate results require no sign-in. Voting uses a real Twitch
-account; this is the working community app, so votes are real rather than demo
-data. Admin and playback controls are restricted to authorized accounts.
+**Built with:** TypeScript, React, TanStack Start, Convex and Cloudflare Workers.
+
+Browse the app and rankings without signing in. Voting uses a real Twitch
+account and affects the community's current round.
 
 ![Public Momoi rankings showing game artwork, tied ranks, vote counts and vote shares](docs/images/rankings.png)
 
