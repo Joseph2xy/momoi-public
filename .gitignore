@@ -1,0 +1,17 @@
+node_modules/
+.convex/
+.auth-local/
+dist/
+.output/
+.wrangler/
+.vinxi/
+.tanstack/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
+.lakebed/
+npm-debug.log*
+reports/
+Thumbs.db
+.DS_Store

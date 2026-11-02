@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Momoi Playback",
+  "version": "0.6.3",
+  "description": "Play Momoi playlists on YouTube and remember your place.",
+  "minimum_chrome_version": "120",
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "alarms"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "optional_host_permissions": [
+    "https://*.convex.site/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_icon": {
+      "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png"
+    },
+    "default_title": "Momoi Playback",
+    "default_popup": "control.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src https://*.convex.site"
+  }
+}

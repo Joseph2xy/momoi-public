@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momoi Playback</title>
+<link rel="stylesheet" href="control.css">
+<link rel="icon" type="image/png" href="assets/icon-32.png">
+</head>
+<body>
+<main>
+<header>
+<img class="brand-icon" src="assets/icon-48.png" width="32" height="32" alt="">
+<div class="brand"><h1>Momoi <span>Playback</span></h1><p id="connection-state" class="connection">Connecting…</p></div>
+</header>
+<section id="playback" hidden aria-label="Playback">
+<p id="state" class="status" role="status">Loading…</p>
+<h2 id="video-title">Your playlist</h2>
+<p id="position" class="muted"></p>
+<button id="start" type="button" disabled>Play</button>
+<button id="open-tab" class="secondary" type="button" hidden>Go to YouTube</button>
+<p id="hint" class="muted"></p>
+</section>
+<p id="message" role="status" hidden></p>
+<section id="setup" hidden aria-labelledby="setup-title">
+<h2 id="setup-title">Connect this browser</h2>
+<form id="pair-form">
+<label for="pairing-details">Pairing details</label>
+<input id="pairing-details" type="password" autocomplete="off" spellcheck="false" required>
+<button id="connect" type="submit">Connect</button>
+</form>
+</section>
+<details id="connection-settings" hidden>
+<summary>Connection settings</summary>
+<p id="remote-name"></p>
+<p class="muted">Disconnecting pauses playback. You’ll need a new code to reconnect.</p>
+<button id="disconnect" class="secondary" type="button">Disconnect browser</button>
+</details>
+</main>
+<script src="control.js"></script>
+</body>
+</html>

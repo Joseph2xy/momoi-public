@@ -1,0 +1,117 @@
+/* Shared voting-room identity, with layouts scoped to each screen. */
+.public-site {
+  --public-content-width:1180px;
+  --public-header-height:68px;
+  --public-panel:#21131e;
+  --public-heading-size:30px;
+  --public-game-title-size:15px;
+  --public-artwork-width:104px;
+  --public-artwork-height:58px;
+}
+.public-site .catalogue #catalogue-title { margin:0; color:var(--foreground); font-size:var(--public-heading-size); font-weight:600; line-height:1.2; letter-spacing:-.025em; }
+.public-site .game-info > span,.public-site .ballot-heading > span,.public-site .catalogue-count,.public-site .standing-count,.public-site .winner-history summary span { font-family:'DM Mono',monospace; font-weight:400; font-variant-numeric:tabular-nums; }
+.public-site .game-row .artwork,.public-site .standings .artwork { width:var(--public-artwork-width); height:var(--public-artwork-height); border-radius:7px; }
+.public-site .game-row h3 { font-size:var(--public-game-title-size); font-weight:600; line-height:1.3; }
+.public-site .empty-state,.public-site .results-empty { padding:48px 20px; border:1px dashed #a6778d; border-radius:12px; background:var(--public-panel); }
+.public-site .results-empty { text-align:center; }
+.public-site { min-height:100dvh; background-color:#160e18; background-image:linear-gradient(#ffffff04 1px,transparent 1px),linear-gradient(90deg,#ffffff04 1px,transparent 1px); background-size:28px 28px; }
+.public-site .site-header { position:sticky; top:0; z-index:5; width:100%; margin:0; flex-shrink:0; max-width:none; min-height:68px; padding:10px max(18px,calc((100vw - var(--public-content-width))/2)); background:#160e18f5; border-color:#633449; gap:20px; }
+.public-site .brand { gap:10px; letter-spacing:-.03em; font-size:15px; white-space:nowrap; }
+.public-site .brand-image { object-fit:contain; border:1px solid #e79bb4; border-radius:12px; background:#44213a; }
+.public-site .brand-long { font-size:13px; }
+.public-site nav { gap:3px; background:#241421; border-color:#68374f; }
+.public-site nav a { padding:10px 13px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+.public-site h1 { font-weight:500; line-height:.94; letter-spacing:-.04em; text-wrap:initial; }
+.public-site h2 { font-weight:600; }
+.public-site .site-footer { max-width:none; margin:0; min-height:34px; padding:4px 18px; display:flex; justify-content:center; align-items:center; gap:6px; font-size:10px; color:var(--subtle-foreground); border-color:#48303f; }
+.public-site .site-footer span { display:inline; }
+.public-site:has(.voting-layout) { display:flex; flex-direction:column; }
+.public-site .voting-layout { width:min(var(--public-content-width),calc(100% - 36px)); max-width:none; margin:0 auto; padding:0; grid-template-columns:290px minmax(0,1fr); gap:0; flex:none; height:calc(100dvh - var(--public-header-height)); min-height:0; overflow:hidden; align-items:stretch; }
+.public-site .voting-sidebar { position:static; padding:28px 24px 20px 0; border-right:1px solid #6c3b525c; min-height:0; overflow-y:auto; }
+.public-site .intro h1 { font-size:48px; margin:10px 0 14px; }
+.public-site .ballot-panel { margin-top:22px; padding:16px; border-color:#633449; border-radius:14px; background:var(--public-panel); }
+.public-site .ballot-heading { gap:8px; }
+.public-site .ballot-heading h2 { font-size:20px; }
+.public-site .ballot-heading > span { font-size:12px; line-height:1.4; text-align:right; flex-shrink:0; white-space:nowrap; }
+.public-site .ballot-slots { margin:14px 0 8px; gap:7px; }
+.public-site .ballot-slots li { min-height:52px; padding:6px; gap:6px; background:#291823; border:1px solid transparent; font-size:12px; }
+.public-site .ballot-slots li.filled { border-color:#64364b; }
+.public-site .ballot-slots .artwork { flex:0 0 42px; width:42px; height:30px; border-radius:4px; }
+.public-site .slot-name { flex:1; min-width:0; overflow-wrap:anywhere; }
+.public-site .slot-name small { display:block; margin-top:4px; font-size:12px; color:var(--muted-foreground); }
+.public-site .remove-button { flex:0 0 44px; min-width:44px; min-height:44px; width:44px; padding:4px; }
+.public-site .remove-button svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; }
+.public-site .save-status { margin:8px 0; min-height:0; font-size:13px; }
+.public-site .automatic-save-note { margin-top:10px; font-size:12px; }
+.public-site .account { margin-top:12px; font-size:12px; gap:8px; }
+.public-site .catalogue { padding:24px 0 18px 30px; min-height:0; display:flex; flex-direction:column; }
+.public-site .catalogue-toolbar { display:block; margin-bottom:14px; flex-shrink:0; }
+.public-site .catalogue-toolbar .section-heading { flex:1; margin:0; }
+.public-site .catalogue-toolbar .section-heading p { margin-top:8px; font-size:14px; }
+.public-site .browse-controls { margin:18px 0 0; width:100%; gap:8px; }
+.public-site .browse-controls select { width:142px; }
+.public-site .search-label { position:relative; min-width:0; }
+.public-site .search-label svg { position:absolute; top:14px; left:12px; width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.7; pointer-events:none; }
+.public-site .search-label input { padding-left:36px; }
+.public-site .game-list { overflow-y:auto; overscroll-behavior:contain; min-height:0; gap:8px; padding:3px 10px 3px 3px; margin:0; scrollbar-color:#704158 #24131f; }
+.public-site .game-row { position:relative; min-height:76px; padding:8px; gap:14px; background:var(--public-panel); border-color:#4d2d3d; flex-shrink:0; }
+.public-site .game-row:hover { border-color:#c36c89; background:#2a1726; }
+.public-site .game-row.selected { border-color:var(--accent); background:#3a1e30; }
+.public-site .game-row:focus-within { outline:3px solid #ffd3de; outline-offset:1px; }
+.public-site .game-info > span { font-size:12px; line-height:1.4; }
+.public-site .game-row button { flex:0 0 104px; width:104px; }
+.public-site .game-row button::after { content:''; position:absolute; inset:0; border-radius:12px; }
+.public-site .public-loading { text-align:center; padding:40px 20px; display:grid; place-items:center; gap:14px; }
+.public-site .public-loading img { border:1px solid #704158; border-radius:16px; padding:8px; width:84px; height:84px; }
+.public-site .section-heading { margin:24px 0 16px; }
+.public-site .section-heading p { font-size:12px; }
+.public-site .winner-history { scroll-margin-top:88px; }
+.public-site .winner-history summary { font-size:20px; color:var(--accent); letter-spacing:-.025em; }
+.public-site .winner-history summary span { font-size:12px; letter-spacing:0; }
+.public-site .winner-history > p { font-size:12px; margin:16px 0; }
+.public-site .winner-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.public-site .winner-grid li { display:flex; align-items:center; gap:14px; padding:10px; border:1px solid #4d2d3d; border-radius:12px; background:var(--public-panel); }
+.public-site .winner-grid .artwork { width:160px; height:90px; border-radius:8px; }
+.public-site .winner-grid h3 { font-size:var(--public-game-title-size); line-height:1.3; overflow-wrap:anywhere; margin:0; }
+@media(max-width:1100px) {
+  .public-site .brand-long { display:none; }
+  .public-site .voting-layout { grid-template-columns:260px minmax(0,1fr); }
+  .public-site .voting-sidebar { padding-right:18px; }
+  .public-site .catalogue { padding-left:20px; }
+  .public-site .browse-controls { margin-top:12px; }
+  .public-site .intro h1 { font-size:40px; }
+  .public-site .ballot-panel { padding:12px; }
+  .public-site .ballot-slots .artwork { flex-basis:32px; width:32px; }
+}
+@media(max-width:720px) {
+  .public-site { --public-header-height:62px; --public-heading-size:27px; --public-game-title-size:13px; --public-artwork-width:72px; --public-artwork-height:48px; }
+  .public-site:has(.voting-layout) { height:auto; min-height:100dvh; }
+  .public-site .site-header { min-height:62px; padding:9px 12px; gap:8px; }
+  .public-site .brand-image { width:36px; height:36px; }
+  .public-site .brand { font-size:14px; gap:7px; }
+  .public-site nav a { padding:10px; font-size:11px; }
+  .public-site .voting-layout { display:block; height:auto; min-height:calc(100dvh - var(--public-header-height)); width:calc(100% - 24px); overflow:visible; }
+  .public-site .voting-sidebar { padding:0; border:0; overflow:visible; }
+  .public-site .intro,.public-site .desktop-account { display:none; }
+  .public-site .catalogue { padding:20px 0 110px; margin:0; display:block; }
+  .public-site .game-list { overflow:visible; padding:3px; }
+  .public-site .game-row { gap:10px; }
+  .public-site .game-row button { min-width:84px; max-width:84px; flex-basis:84px; width:84px; font-size:12px; }
+  .public-site .mobile-ballot-trigger { left:10px; right:10px; width:calc(100% - 20px); bottom:max(10px,env(safe-area-inset-bottom)); border:1px solid #9f506b; border-radius:14px; background:#29141ff5; color:var(--foreground); padding:12px 15px; text-align:left; display:flex; justify-content:space-between; }
+  .public-site .mobile-ballot-trigger small { display:block; font-size:12px; font-weight:400; color:var(--muted-foreground); margin-top:4px; }
+  .public-site .mobile-ballot-trigger strong { color:#f4a7b9; font-size:17px; flex-shrink:0; }
+  .public-site .winner-grid { grid-template-columns:1fr; }
+  .public-site .winner-grid .artwork { width:128px; height:76px; }
+  .public-site .winner-grid h3 { font-size:15px; }
+  .public-site .site-footer { flex-wrap:wrap; }
+  .public-site:has(.voting-layout) .site-footer { padding:16px 12px calc(96px + env(safe-area-inset-bottom)); }
+}
+@media(prefers-reduced-motion:reduce) { .public-site .reaction-emote,.public-site .public-loading img { visibility:hidden; } }
+.public-site .app-save-notice { position:fixed; z-index:30; bottom:20px; left:50%; transform:translateX(-50%); width:max-content; max-width:calc(100% - 32px); display:flex; flex-wrap:wrap; justify-content:center; gap:8px 16px; padding:10px 20px; border:1px solid #704158; border-radius:8px; background:#24131f; color:var(--muted-foreground); font-size:14px; }
+.public-site .app-save-notice a { color:var(--accent); text-decoration:underline; }
+.public-site .ballot-empty { margin:16px 0; color:var(--muted-foreground); font-size:14px; line-height:1.6; }
+.public-site .voting-round-context { flex-shrink:0; margin:2px 0 14px; padding:12px 0; border-block:1px solid #48303f; color:var(--muted-foreground); font-size:13px; line-height:1.6; }
+.public-site .voting-round-context strong { color:var(--foreground); }
+.public-site .round-change-message:not(:empty) { margin-top:8px; color:var(--accent); }
+.public-site .round-change-message:empty { display:none; }
+.public-site .catalogue-count { flex-shrink:0; margin:0 0 10px; font-size:12px; color:var(--muted-foreground); overflow-wrap:anywhere; }

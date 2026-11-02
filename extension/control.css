@@ -1,0 +1,33 @@
+* { box-sizing:border-box }
+[hidden] { display:none !important }
+body { width:360px; margin:0; background:#19141c; color:#fff; font:14px/1.5 system-ui,sans-serif; color-scheme:dark }
+main { padding:20px }
+header { display:flex; align-items:center; gap:10px; padding-bottom:18px; border-bottom:1px solid #352c38 }
+.brand { min-width:0 }
+.brand-icon { display:block; flex-shrink:0; object-fit:contain }
+h1 { font-size:15px; font-weight:650; line-height:1.3; margin:0 }
+h1 span { color:#cbc7d0; font-weight:400 }
+h2 { font-size:20px; font-weight:650; letter-spacing:-.02em; line-height:1.3; margin:0 0 20px; overflow-wrap:anywhere }
+p { margin:12px 0; overflow-wrap:anywhere }
+.connection { margin:4px 0 0; color:#aaa5b1; font-size:11px; line-height:1.4 }
+.connection::before { content:''; display:inline-block; width:6px; height:6px; margin-right:7px; border-radius:50%; background:#efafc9; vertical-align:middle }
+section { padding-top:22px }
+.muted { color:#cbc7d0; font-size:13px }
+.status { color:#f4a7b9; font-size:12px; font-weight:600; margin:0 0 10px }
+#position { color:#fff; margin:0 0 20px; font-variant-numeric:tabular-nums }
+button { width:100%; min-height:44px; padding:11px 14px; border:1px solid transparent; border-radius:8px; background:#e8b0c9; color:#281d25; font:inherit; font-weight:650; cursor:pointer }
+button:hover:not(:disabled) { background:#f0c3d7 }
+button:active:not(:disabled) { background:#d99bb7 }
+button:disabled { opacity:.5; cursor:default }
+button.secondary { background:transparent; border-color:#514252; color:#fff }
+button.secondary:hover:not(:disabled) { background:#342333 }
+#open-tab { margin-top:10px }
+input { width:100%; min-height:44px; padding:11px 12px; margin:8px 0 16px; border:1px solid #514252; border-radius:8px; background:#221c26; color:inherit; font:inherit }
+input::placeholder { color:#aaa5b1 }
+input:disabled { opacity:.6 }
+label { display:block; font-size:13px; font-weight:600 }
+details { border-top:1px solid #352c38; margin:20px 0 0; padding-top:14px }
+summary { cursor:pointer; color:#cbc7d0; font-size:13px }
+#message { padding:12px; border:1px solid #75576a; border-radius:8px; background:#2b1d29 }
+#message.error { color:#ffd0cd; border-color:#b06c75 }
+button:focus-visible,input:focus-visible,summary:focus-visible { outline:2px solid #fff; outline-offset:3px }

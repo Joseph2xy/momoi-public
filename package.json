@@ -1,0 +1,48 @@
+{
+  "name": "momoi-voting",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "dev": "vite dev --port 3000",
+    "dev:backend": "convex dev",
+    "build": "vite build && npm run typecheck",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit && tsc -p extension/tsconfig.json",
+    "cf:typegen": "wrangler types",
+    "deploy": "convex deploy --cmd \"npm run build\" && wrangler deploy --config dist/server/wrangler.json",
+    "configure:backend": "convex dev --configure --dev-deployment cloud --once",
+    "build:extension": "tsc -p extension/tsconfig.json && node scripts/build-extension.mjs"
+  },
+  "dependencies": {
+    "@convex-dev/better-auth": "0.12.5",
+    "@radix-ui/react-dialog": "^1.1.23",
+    "@radix-ui/react-slot": "^1.3.3",
+    "@tanstack/react-router": "^1.170.32",
+    "@tanstack/react-start": "^1.168.49",
+    "better-auth": "1.6.30",
+    "class-variance-authority": "^0.7.1",
+    "cn": "^0.2.6",
+    "convex": "1.45.0",
+    "lucide-react": "^1.42.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sonner": "^2.0.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.54.4",
+    "@types/chrome": "^0.3.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.2",
+    "vite": "^8.2.2",
+    "wrangler": "^4.129.0"
+  },
+  "license": "MIT"
+}
