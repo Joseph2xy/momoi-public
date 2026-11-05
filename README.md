@@ -7,10 +7,7 @@ to chance. The winning playlist plays automatically.
 
 [Architecture](docs/architecture.md)
 
-![Public Momoi rankings showing game artwork, tied ranks, vote counts and vote shares](docs/images/rankings.png)
-
-Public production rankings captured October 31, 2026. Counts and catalogue entries
-change as the community votes; no individual ballots are shown.
+![Momoi voting screen showing selected games and the game catalogue](docs/images/voting.png)
 
 ## What it does
 

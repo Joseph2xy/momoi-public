@@ -3,8 +3,8 @@
 [Product](product.md) owns behavior; [architecture](architecture.md) owns implementation.
 The [session handoff](handoff.md) records publication status, completed checks and
 remaining work and deferred checks.
-The live app at https://momoi.joe2xyb.workers.dev uses Convex production
-`YOUR_PRODUCTION_DEPLOYMENT`; cloud development uses `YOUR_DEVELOPMENT_DEPLOYMENT`. The previous
+The hosted website has been taken down. Production and cloud development use
+separate Convex deployments. The previous
 D1 database is retained and is no longer written by this Worker.
 Deployment, cloud setup, Twitch configuration changes, and
 vote resets require explicit authorization. No reset runs during startup or deployment.
@@ -44,9 +44,7 @@ match `<SITE_URL>/api/auth/callback/twitch`. Login requests Twitch email permiss
 there is no separate email/password login. Secure cookies require HTTPS except
 for browsers' localhost allowance.
 
-The production callback registered in Twitch is exactly
-`https://momoi.joe2xyb.workers.dev/api/auth/callback/twitch`. A
-`redirect_mismatch` error means the requested callback is not registered for
+A `redirect_mismatch` error means the requested callback is not registered for
 the configured Twitch client ID. Update that application's OAuth Redirect URLs,
 save, and start a fresh sign-in from the site. No new secret is needed.
 
@@ -102,9 +100,8 @@ callback URLs or unredacted network exports from voters.
 ## Deployment
 
 Select the intended Convex production deployment and Cloudflare account.
-`wrangler.jsonc` targets the existing `momoi` Worker at
-`https://momoi.joe2xyb.workers.dev`. Set backend variables and the Twitch callback
-for that origin. Supply the production `VITE_CONVEX_SITE_URL` to the build
+`wrangler.jsonc` targets the `momoi` Worker. Set backend variables and the Twitch
+callback for the frontend origin you deploy. Supply the production `VITE_CONVEX_SITE_URL` to the build
 environment; do not reuse the development HTTP actions URL.
 
 For this production deployment, run the following after deployment is authorized:
